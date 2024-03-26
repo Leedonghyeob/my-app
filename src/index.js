@@ -1,13 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+// 연결할 path(주소)와 컴퍼턴트를 연결하기 위한 설정 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+  {
+    path: "/hello",
+    element: <h2>Hello, React!</h2>
+  }
+]);
+
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
